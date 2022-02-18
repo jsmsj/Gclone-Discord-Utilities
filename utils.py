@@ -117,7 +117,7 @@ def make_url(source):
     if "https://" in source or "http://" in source:
         return source
     else:
-        if "drive.google.com" in source:
+        if source.startswith("drive.google.com"):
             sour = "https://" + source
             return sour 
         else:
