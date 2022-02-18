@@ -205,7 +205,7 @@ async def mkdir(ctx,name=None, source=secrets.DEFAULT_DESTINATION_ID):
     end_time = time.time()
     taken_time = round((end_time-start_time)*1000)
     em.set_footer(text=f"Time taken: {taken_time}ms = {taken_time/1000}s")
-    await msg.edit(content={ctx.author.mention},embed=em)
+    await msg.edit(content=ctx.author.mention,embed=em)
 
 
 @bot.command()
