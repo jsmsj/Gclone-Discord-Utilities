@@ -33,7 +33,7 @@ bot = commands.Bot(command_prefix=commands.when_mentioned_or(secrets.PREFIX))
 bot.remove_command("help")
 status = cycle([
     f'{secrets.PREFIX} ping',
-    '{secrets.PREFIX} help',
+    f'{secrets.PREFIX} help',
     'you clone some TBs',
 ])
 # # Setting `Playing ` status
@@ -488,7 +488,7 @@ async def name(ctx,source=None):
     if "Source id not found in" in sour:
         return await ctx.send(f"Id not found in {source}")
     msg = await ctx.send("***Finding Name ...***")
-    nam = send_name(sour)
+    nam = send_name(soure)
     em = discord.Embed(title="**Name determined**",description=f"```py\n{nam}\n```",color=discord.Color.green())
     end_time = time.time()
     taken_time = round((end_time-start_time)*1000)
