@@ -20,13 +20,18 @@ Before you get started, you need [Python](https://www.python.org/) 3.7 or later 
 4. Run `pip install -r requirements.txt`
 5. Create a discord bot account. Follow this [tutorial](https://discordpy.readthedocs.io/en/stable/discord.html), or you can refer to youtube.
 6. Edit the [secrets.py](secrets.py) file.
-7. Open up your Terminal or Command Line and then `cd` into the directory of the Cloned GitHub Repo.
-8. Run `python main.py` or `python3 main.py`. The output of the Terminal or Command Line should have no errors and show that everything is all ready!
+7. Update the [rclone.conf](rclone.conf) file as per your need.
+8. Open up your Terminal or Command Line and then `cd` into the directory of the Cloned GitHub Repo.
+9. Run `python main.py` or `python3 main.py`. The output of the Terminal or Command Line should have no errors and show that everything is all ready!
 ---
 **Enjoy using Gclone Discord Utilities Bot**
+----
+# Detailed Tutorial on Gclone and Service accounts setup
 
-## Detailed Tutorial on Gclone and Service accounts setup
+## How to create Service Accounts and add them to your teamdrive and setup gclone.
+Follow [this tutorial](https://rentry.co/gcloneguide)
 
-*Coming soon ......*
+## How to set-up Gclone-Discord-Utilities bot 
+_Coming soon ......_
 
 ---
