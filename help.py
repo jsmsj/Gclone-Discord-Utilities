@@ -44,7 +44,7 @@ class Help(commands.Cog,):
         await ctx.send(embed = helpEmbed)
 
     @help.command()
-    async def move(self,ctx):
+    async def sync(self,ctx):
         helpEmbed = discord.Embed(title = 'Move', color = discord.Color.green(),
         description = "Sync the source to the destination, changing the destination\nonly.  Doesn't transfer unchanged files, testing by size and\nmodification time or MD5SUM.  Destination is updated to match\nsource, including deleting files if necessary."
         )
@@ -53,7 +53,7 @@ class Help(commands.Cog,):
         await ctx.send(embed = helpEmbed)
 
     @help.command()
-    async def sync(self,ctx):
+    async def move(self,ctx):
         helpEmbed = discord.Embed(title = 'Sync', color = discord.Color.green(),
         description = "Moves the contents of the source directory to the destination\ndirectory. Gclone will error if the source and destination overlap and\nthe destination does not support a server side directory move operation."
         )
