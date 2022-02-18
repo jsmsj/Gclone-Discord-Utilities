@@ -1,4 +1,12 @@
 # Gclone Discord Utilities
+## Features
+1. **Clone**  - Clone a public/private google drive file/folder to your teamdrive.
+2. **Mkdir**  - Make Directories directly from discord.
+3. **Size**   - Calculate size of google drive files/folders from link.
+4. **Move**   - Move files/folders from one location to other.
+5. **sync**   - Sync source links to destination links.
+6. **Delete** - Delete folders/files.
+7. **Name**   - Find name of google drive folders/files from link.
 ## Prerequisites
 Before you get started, you need [Python](https://www.python.org/) 3.7 or later to run this script. Below are some extra things you need to download / install too:
 
