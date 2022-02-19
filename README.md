@@ -14,15 +14,16 @@ Before you get started, you need [Python](https://www.python.org/) 3.7 or later 
 - **[AutoRClone](https://github.com/xyou365/autorclone) - (Service accounts folder)** - GClone requires service accounts. To generate and manage them, use AutoRClone. You can then configure GClone using the service accounts.
 
 ## Setup (Windows):
-1. Download the [zip](https://codeload.github.com/jsmsj/Gclone-Discord-Utilities/zip/refs/heads/main) of the repo.
-2. Run `pip install virtualenv` in your terminal.
-3. Activate the virtual enviorment.
-4. Run `pip install -r requirements.txt`
-5. Create a discord bot account. Follow this [tutorial](https://discordpy.readthedocs.io/en/stable/discord.html), or you can refer to youtube.
-6. Edit the [secrets.py](secrets.py) file.
-7. Update the [rclone.conf](rclone.conf) file as per your need.
-8. Open up your Terminal or Command Line and then `cd` into the directory of the Cloned GitHub Repo.
-9. Run `python main.py` or `python3 main.py`. The output of the Terminal or Command Line should have no errors and show that everything is all ready!
+1. Download the [zip](https://codeload.github.com/jsmsj/Gclone-Discord-Utilities/zip/refs/heads/main) of the repo and extract it to a suitable location.
+2. Download the latest release of [gclone](https://github.com/donwa/gclone/releases/) and add the **gclone** file to the location, where you extracted .zip folder in step 1.
+3. Run `pip install virtualenv` in your terminal.
+4. Activate the virtual enviorment.
+5. Run `pip install -r requirements.txt`
+6. Create a discord bot account. Follow this [tutorial](https://discordpy.readthedocs.io/en/stable/discord.html), or you can refer to youtube.
+7. Edit the [.env](.env) file.
+8. Update the [rclone.conf](rclone.conf) file as per your need.
+9. Open up your Terminal or Command Line and then `cd` into the directory of the Cloned GitHub Repo.
+10. Run `python main.py` or `python3 main.py`. The output of the Terminal or Command Line should have no errors and show that everything is all ready!
 ---
 **Enjoy using Gclone Discord Utilities Bot**
 ----

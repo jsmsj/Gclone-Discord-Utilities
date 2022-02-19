@@ -35,6 +35,7 @@ status = cycle([
     f'{secrets.PREFIX} ping',
     f'{secrets.PREFIX} help',
     'you clone some TBs',
+    f'Version {secrets.VERSION}'
 ])
 # # Setting `Playing ` status
 # await bot.change_presence(activity=discord.Game(name="a game"))
@@ -83,10 +84,10 @@ async def clone(ctx,source=None,name=None, destination=secrets.DEFAULT_DESTINATI
         return await ctx.send(f"Id not found in {destination}")
     if name is None:
         try:
-            name = send_name(source)
+            name = await send_name(source)
         except:
             name = random_alphanumeric()
-        name = send_name(source)
+        name = await send_name(source)
     if name != None:
         d1 ='"'+"{"+ destinatio+"}"+"/"+ name + '"'
     else:
@@ -225,7 +226,7 @@ async def size(ctx,source=None):
     testing = out.splitlines()
     if testing[-1] == "Total size: 0 Bytes (0 Bytes)" and testing[0] == "Total objects: 0":
         try:
-            out = file_size(sour)
+            out = await file_size(sour)
         except AttributeError:
             pass
     em = discord.Embed(title="**Size Calculated**",description=f"```py\n{out}\n```",color=discord.Color.green())
@@ -488,7 +489,9 @@ async def name(ctx,source=None):
     if "Source id not found in" in sour:
         return await ctx.send(f"Id not found in {source}")
     msg = await ctx.send("***Finding Name ...***")
-    nam = send_name(soure)
+    nam = await send_name(soure)
+    if nam == "":
+        nam = "Cannot get name\nThe given file/folder is private."
     em = discord.Embed(title="**Name determined**",description=f"```py\n{nam}\n```",color=discord.Color.green())
     end_time = time.time()
     taken_time = round((end_time-start_time)*1000)

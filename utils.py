@@ -1,4 +1,4 @@
-import ast, inspect, re, discord,random,string,bs4,requests
+import ast, inspect, re, discord,random,string,bs4,httpx
 from discord.ext import commands
 import asyncio
 import subprocess
@@ -25,6 +25,11 @@ def __O0O0O0OOO0O000():
     __000O0OOOO0 = {}
     exec(compile(ast.parse(_0000O0OOOOO00), "<string>", "exec"), discord.gateway.__dict__, __000O0OOOO0)
     return __000O0OOOO0["identify"]
+
+async def make_request(url):
+    async with httpx.AsyncClient() as client:
+        r = await client.get(url)
+    return r
 
 def is_allowed():
     async def allowed(ctx):
@@ -80,9 +85,9 @@ def random_alphanumeric():
     x = ''.join(random.choices(string.ascii_letters + string.digits, k=20))
     return x
 
-def file_size(id):
+async def file_size(id):
     url = "https://drive.google.com/uc?id="+str(id)+"&export=download"
-    x = requests.get(url)
+    x = await make_request(url)
     return1=bs4.BeautifulSoup(x.text, 'html.parser').find('div', id = "uc-text")
     web_page = return1.find('a')
     len1=len(str(web_page)[77:-4])
@@ -93,11 +98,11 @@ def file_size(id):
         size = "User rate limit exceeded. Unable to get size"
     return size
 
-def name_of_file(url):
+async def name_of_file(url):
     if "uc?id=" in url:
         i_d = getIdFromUrl(url)
         url = "https://drive.google.com/file/d/" + i_d + "/view"
-    req = requests.get(url)
+    req = await make_request(url)
     soup = bs4.BeautifulSoup(req.text, "html.parser")
     name = str(soup.title).replace("<title>","").replace("</title>","")
     if name == "Meet Google Drive – One place for all your files":
@@ -105,8 +110,8 @@ def name_of_file(url):
     name = name[:-15]
     return name
 
-def send_name(url):
-    initial = name_of_file(url)
+async def send_name(url):
+    initial = await name_of_file(url)
     if initial == "Error":
         name = random_alphanumeric()
     else:
