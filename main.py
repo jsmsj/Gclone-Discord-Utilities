@@ -326,7 +326,7 @@ async def sync(ctx, source=None, destination=None):
     s1 = "{" + source + "}"
     d1 = "{" + destinatio + "}"
     msg = await ctx.send(
-        "***CloneCord is syncing... it should be done syncing in a couple of minutes!***"
+        "***GcloneBot is syncing... it should be done syncing in a couple of minutes!***"
     )
     cmd = ["gclone", "sync", f"GC:{s1}", f"GC:{d1}", "--transfers", "50", "--tpslimit-burst", "50", "--checkers", "10", "-vP", "--stats-one-line", "--stats=15s", "--drive-server-side-across-configs", "--drive-chunk-size", "128M", "--drive-acknowledge-abuse", "--drive-keep-revision-forever", "--fast-list"]
     out = await execute(cmd)
@@ -394,7 +394,7 @@ async def deletefolder(ctx, source=None):
         return await ctx.send(f"Id not found in {source}")
     s1 = "{" + sourc + "}"
     msg = await ctx.send(
-        "*CloneCord is emptying the directory... it should be done in around 5 minutes if your directory is big! You **cannot** recover these from the **trashcan***"
+        "*GcloneBot is emptying the directory... it should be done in around 5 minutes if your directory is big! You **cannot** recover these from the **trashcan***"
     )
     cmd=["gclone", "delete", f"GC:{s1}", "-vP","--stats-one-line", "--stats=15s", "--fast-list"]
     out = await execute(cmd)
@@ -444,7 +444,7 @@ async def deletefile(ctx, source=None):
         return await ctx.send(f"Id not found in {source}")
     s1 = "{" + sourc + "}"
     msg = await ctx.send(
-        "*CloneCord is deleting the file... it should be done in around 5 minutes if your file is big!* **If you are worried about losing your deleted file forever, don't worry! You can recover stuff from your trash can!**"
+        "*GcloneBot is deleting the file... it should be done in around 5 minutes if your file is big!* **If you are worried about losing your deleted file forever, don't worry! You can recover stuff from your trash can!**"
     )
     cmd=["gclone", "deletefile", f"GC:{s1}", "-vP", "--drive-trashed-only","--stats-one-line", "--stats=15s", "--fast-list"]
     out = await execute(cmd)
