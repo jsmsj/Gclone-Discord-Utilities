@@ -389,7 +389,7 @@ async def deletefolder(ctx, source=None):
         return await ctx.send(f"Source not given.\nFor correct usage run `{secrets.PREFIX}help deletefolder`")
     start_time = time.time()
     souce = make_url(source)
-    sourc = get_id(source)
+    sourc = get_id(souce)
     if "Source id not found in" in sourc:
         return await ctx.send(f"Id not found in {source}")
     s1 = "{" + sourc + "}"
