@@ -129,7 +129,7 @@ async def clone(ctx,source=None,name=None, destination=secrets.DEFAULT_DESTINATI
     butt3 = Button(
         label="Gclone Command",
         style=discord.ButtonStyle.grey,
-        emoji="🔗"
+        emoji="💅"
     )
 
 
@@ -163,10 +163,11 @@ async def clone(ctx,source=None,name=None, destination=secrets.DEFAULT_DESTINATI
         if interaction.user != ctx.author:
             await interaction.response.send_message("This button is not for you",ephemeral=True)
         else:
-            butt1.disabled=True
-            butt1.style = discord.ButtonStyle.success
+            butt3.disabled=True
+            butt3.style = discord.ButtonStyle.success
             await interaction.response.edit_message(content=f"{ctx.author.mention}",embed=em,view=view)
-            await interaction.followup.send(f'gclone copy GC:"{d1}/{name}" "C:\\Users\\USERNAME\\Desktop\\{name} --progress"',ephemeral=True)
+            des = d1.replace('"','')
+            await interaction.followup.send(f'```py\ngclone copy GC:"{des}" "C:\\Users\\USERNAME\\Desktop\\{name}" --progress\n```',ephemeral=True)
     
     butt1.callback = butt1call
     butt2.callback = butt2call
@@ -531,6 +532,15 @@ async def info(ctx):
 
     await ctx.send(embed=em)
 
+@bot.command()
+async def source(ctx):
+    em = discord.Embed(title="Source Code",description="You can also host the bot on Heroku",color=discord.Color.green())
+    em.add_field(name="Made By",value="jsmsj#5252\n(DMs Open for recommendations.)")
+    em.add_field(name="Version",value=secrets.VERSION)
+    em.add_field(name="Bot Repository for Self Hosting",value="[Gclone Discord Utilities](https://github.com/jsmsj/Gclone-Discord-Utilities)",inline=False)
+    em.add_field(name="Bot Repository for Heroku",value="[Gclone Discord Utilities Heroku](https://github.com/jsmsj/Gclone-Discord-Utilities-Heroku)",inline=False)
+
+    await ctx.send(embed=em)
 
 bot.load_extension('help')
 bot.run(secrets.TOKEN)

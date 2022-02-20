@@ -12,9 +12,15 @@ class Help(commands.Cog,):
         helpEmbed = discord.Embed(title = 'Help is here', color = discord.Color.green(), description = f"Use `{secrets.PREFIX}help <command>` for extended information")
         helpEmbed.add_field(name= "Gclone Integration", value = "`clone`, `mkdir`, `size`, `move`, `sync`, `deltefolder`, `deletefile`")
         helpEmbed.add_field(name= "Admin Only", value= "`add`, `remove`", inline=False )
-        helpEmbed.add_field(name= "Utility (Anyone can use)", value= "`ping`, `size`, `name`, `info`", inline=False )
+        helpEmbed.add_field(name= "Utility (Anyone can use)", value= "`ping`, `size`, `name`, `info`, `source`", inline=False )
         helpEmbed.set_footer(text="Made with 💘 by jsmsj#5252 using pycord. Inspired from Rekulous' CloneCord.")
         await ctx.send(embed= helpEmbed)
+
+    @help.command()
+    async def source(self,ctx):
+        helpEmbed = discord.Embed(title = 'Source Code', color = discord.Color.green(), description = "The Bot is open source.")
+        helpEmbed.add_field(name="**Syntax**", value = f"`{secrets.PREFIX}source`")
+        await ctx.send(embed = helpEmbed)
 
     @help.command()
     async def clone(self,ctx):

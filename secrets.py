@@ -23,7 +23,7 @@ for admin in tempp:
     ADMINS.append(int(admin))
 
 
-DESTINATION_ID = os.getenv("DESTINATION_ID") 
+DESTINATION_ID = os.getenv("DESTINATION_ID")
 
 VERSION = "1.5.0" #This is the bot version. It is recommended that you do not change it.
 
